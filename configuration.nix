@@ -10,6 +10,9 @@
       ./hardware-configuration.nix
     ];
 
+  # Framework tablet mode
+  boot.initrd.kernelModules = [ "pinctrl_tigerlake" ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -153,10 +156,6 @@
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-    # Override Steam to include the cursor theme in its FHS environment
-    extraPackages = pkgs: with pkgs; [
-      bibata-cursors
-    ];
   };
 
   # AppImage support
