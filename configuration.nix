@@ -17,7 +17,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Servic for BIOS update
+  # Service for BIOS update
   services.fwupd.enable = true;
 
   networking.hostName = "garuda"; # Define your hostname.
