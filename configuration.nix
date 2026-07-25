@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      (fetchGit { url = "https://github.com/cornerman/shadow-nix"; ref = "ref/tags/v2.0.2"; } + "/import/system.nix")
+      (fetchGit { url = "https://github.com/cornerman/shadow-nix"; ref = "refs/tags/v2.0.2"; } + "/import/system.nix")
     ];
 
   # Bootloader.
