@@ -129,6 +129,7 @@
     protonplus
     qbz
     gnome-tweaks
+    libinput
   ];
 
   # Steam
