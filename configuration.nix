@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      (fetchGit { url = "https://github.com/cornerman/shadow-nix"; ref = "master"; } + "/import/system.nix")
     ];
 
   # Bootloader.
@@ -133,15 +132,8 @@
     protonplus
     qbz
     gnome-tweaks
-    libva #Shadow driver for VA-API
-    libinput #Shadow driver for libinput
+    fwupd
   ];
-
-  programs.shadow-client = {
-    # Enabled by default when using import
-    # enable = true;
-    channel = "prod";
-  };
 
   # Hardware drivers
   hardware.graphics = {
