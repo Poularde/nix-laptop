@@ -17,6 +17,9 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Servic for BIOS update
+  services.fwupd.enable = true;
+
   networking.hostName = "garuda"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
