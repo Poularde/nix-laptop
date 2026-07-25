@@ -157,15 +157,13 @@
   programs.appimage = {
     enable = true;
     binfmt = true;
-    programs.appimage.package = pkgs.appimage-run.override 
-    {
-      extraPkgs = pkgs: 
-      [
-        pkgs.libva
-        pkgs.libinput
-      ]; 
-    };
   };
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    libva
+    libinput
+    intel-media-driver
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
