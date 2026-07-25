@@ -144,6 +144,7 @@
       intel-media-driver
     ];
   };
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 
   # Steam
   programs.steam = {
