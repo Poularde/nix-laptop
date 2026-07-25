@@ -138,11 +138,12 @@
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-      intel-vaapi-driver
-      libva-vdpau-driver
-      libvdpau-va-gl
       intel-media-driver
     ];
+  };
+  # Hardware hybrid decoding
+  nixpkgs.config.packageOverrides = pkgs: {
+    intel-media-driver = pkgs.intel-media-driver.override { enableHybridCodec = true; };
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 
