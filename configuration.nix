@@ -8,10 +8,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <nixos-hardware/framework/12-inch/13th-gen-intel>
     ];
 
   # Framework tablet mode
   boot.initrd.kernelModules = [ "pinctrl_tigerlake" ];
+  hardware.sensor.iio.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
