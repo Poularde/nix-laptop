@@ -136,7 +136,6 @@
     libinput #Shadow driver for libinput
   ];
 
-  # Shadow
   # Hardware drivers
   hardware.graphics = {
     enable = true;
@@ -157,13 +156,6 @@
   programs.appimage = {
     enable = true;
     binfmt = true;
-  };
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    libva
-    libinput
-    intel-media-driver
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
