@@ -154,7 +154,7 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     # Override Steam to include the cursor theme in its FHS environment
-    extraPkgs = pkgs: with pkgs; [
+    extraPackages = pkgs: with pkgs; [
       bibata-cursors
     ];
   };
