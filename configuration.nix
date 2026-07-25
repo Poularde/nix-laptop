@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      (fetchGit { url = "https://github.com/cornerman/shadow-nix"; ref = "refs/tags/v2.0.2"; } + "/import/system.nix")
     ];
 
   # Bootloader.
@@ -48,6 +47,9 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "modesetting" ];
+  boot.kernelParams = [ "i915.enable_guc=3" ];
+
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
@@ -144,11 +146,6 @@
     ];
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
-  programs.shadow-client = {
-    # Enabled by default when using import
-    # enable = true;
-    channel = "prod";
-  };
 
   # Steam
   programs.steam = {
