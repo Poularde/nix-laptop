@@ -137,6 +137,8 @@
   # Hardware drivers
   hardware.graphics = {
     enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
     extraPackages = with pkgs; [
       intel-media-driver
       vpl-gpu-rt
