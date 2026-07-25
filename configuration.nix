@@ -139,11 +139,8 @@
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver
+      vpl-gpu-rt
     ];
-  };
-  # Hardware hybrid decoding
-  nixpkgs.config.packageOverrides = pkgs: {
-    intel-media-driver = pkgs.intel-media-driver.override { enableHybridCodec = true; };
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 
