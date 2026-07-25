@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      (fetchGit { url = "https://github.com/cornerman/shadow-nix"; ref = "master"; } + "/import/system.nix")
     ];
 
   # Bootloader.
@@ -136,6 +137,12 @@
     libinput #Shadow driver for libinput
   ];
 
+  programs.shadow-client = {
+    # Enabled by default when using import
+    # enable = true;
+    channel = "prod";
+  };
+
   # Hardware drivers
   hardware.graphics = {
     enable = true;
@@ -157,7 +164,7 @@
     enable = true;
     binfmt = true;
   };
-  
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
