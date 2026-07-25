@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      (fetchGit { url = "https://github.com/cornerman/shadow-nix"; ref = "master"; } + "/import/system.nix")
     ];
 
   # Bootloader.
@@ -143,6 +144,12 @@
     ];
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
+  programs.shadow-client = {
+    # Enabled by default when using import
+    # enable = true;
+    channel = "prod";
+  };
+}
 
   # Steam
   programs.steam = {
