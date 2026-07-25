@@ -129,7 +129,8 @@
     protonplus
     qbz
     gnome-tweaks
-    libinput
+    libinput #Shadow driver for libinput
+    intel-media-driver #Shadow driver for Intel GPU
   ];
 
   # Steam
