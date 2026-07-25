@@ -141,10 +141,9 @@
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-      libva-intel-driver
+      intel-media-driver
     ];
   };
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "i965"; }; # Force intel-media-driver
 
   # Steam
   programs.steam = {
