@@ -149,7 +149,6 @@
     # enable = true;
     channel = "prod";
   };
-}
 
   # Steam
   programs.steam = {
