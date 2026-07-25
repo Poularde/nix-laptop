@@ -136,6 +136,7 @@
     wowup-cf
     rclone
     protonplus
+    protontricks
     qbz
     gnome-tweaks
     fwupd
@@ -156,7 +157,7 @@
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-    package = pkgs.steam.override {
+    package = pkgs.steam.override { # Override the default Steam package to include system cursors
       extraPkgs = pkgs: with pkgs; [
         bibata-cursors
       ];
