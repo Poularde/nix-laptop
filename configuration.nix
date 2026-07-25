@@ -129,9 +129,25 @@
     protonplus
     qbz
     gnome-tweaks
+    libva-utils #Shadow driver for VA-API
     libinput #Shadow driver for libinput
-    intel-media-driver #Shadow driver for Intel GPU
   ];
+
+  # Shadow
+  # Hardware hybrid decoding
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  };
+  # Hardware drivers
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+      intel-media-driver
+    ];
+  };
 
   # Steam
   programs.steam = {
