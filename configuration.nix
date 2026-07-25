@@ -136,6 +136,7 @@
     qbz
     gnome-tweaks
     fwupd
+    bibata-cursors
   ];
 
   # Hardware drivers
