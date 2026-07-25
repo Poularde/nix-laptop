@@ -134,7 +134,6 @@
     gnome-tweaks
     libva #Shadow driver for VA-API
     libinput #Shadow driver for libinput
-    mesa #Shadow driver for mesa
   ];
 
   # Shadow
@@ -158,6 +157,14 @@
   programs.appimage = {
     enable = true;
     binfmt = true;
+    programs.appimage.package = pkgs.appimage-run.override 
+    {
+      extraPkgs = pkgs: 
+      [
+        pkgs.libva
+        pkgs.libinput
+      ]; 
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
