@@ -134,6 +134,7 @@
     gnome-tweaks
     libva-utils #Shadow driver for VA-API
     libinput #Shadow driver for libinput
+    mesa #Shadow driver for mesa
   ];
 
   # Shadow
