@@ -18,6 +18,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.configurationLimit = 3; # Limit the number of boot entries to keep in the EFI System Partition.
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
