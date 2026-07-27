@@ -102,7 +102,7 @@
   users.users."poularde" = {
     isNormalUser = true;
     description = "Poularde";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       git
