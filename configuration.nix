@@ -147,7 +147,7 @@
     gnome-tweaks
     fwupd
     bibata-cursors
-    plokit # Dygma
+    polkit # Dygma
     polkit_gnome # Dygma
   ];
 
