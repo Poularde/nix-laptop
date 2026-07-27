@@ -26,6 +26,9 @@
   # Service for BIOS update
   services.fwupd.enable = true;
 
+  # Dygma keyboard support
+  security.polkit.enable = true;
+
   networking.hostName = "garuda"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -144,6 +147,8 @@
     gnome-tweaks
     fwupd
     bibata-cursors
+    plokit # Dygma
+    polkit_gnome # Dygma
   ];
 
   # Hardware drivers
