@@ -26,9 +26,6 @@
   # Service for BIOS update
   services.fwupd.enable = true;
 
-  # Dygma keyboard support
-  security.polkit.enable = true;
-
   networking.hostName = "garuda"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -102,7 +99,7 @@
   users.users."poularde" = {
     isNormalUser = true;
     description = "Poularde";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       git
@@ -147,8 +144,7 @@
     gnome-tweaks
     fwupd
     bibata-cursors
-    polkit # Dygma
-    polkit_gnome # Dygma
+    bazecor
   ];
 
   # Hardware drivers
