@@ -140,7 +140,7 @@
     rclone
     protonplus
     protontricks
-    qbz
+    #qbz
     gnome-tweaks
     fwupd
     bibata-cursors
